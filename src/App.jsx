@@ -1,10 +1,19 @@
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
+// App.jsx
+import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import Header from "./components/Header";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import Sidebar from "./components/Sidebar";
+import router from "./pages"; // your array of routes
 
-function App() {
+// Internal wrapper to access location/navigation inside Router
+function AppLayout() {
   const location = useLocation();
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -17,7 +26,7 @@ function App() {
 
   return (
     <div className="h-screen flex flex-col bg-gray-50">
-      {/* Header (always full width) */}
+      {/* Header */}
       <motion.div className="bg-white shadow-sm w-full z-10">
         <Header
           onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
@@ -25,7 +34,6 @@ function App() {
         />
       </motion.div>
 
-      {/* Body layout: Sidebar + Main Content */}
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
         <motion.div
@@ -37,7 +45,7 @@ function App() {
           <Sidebar />
         </motion.div>
 
-        {/* Mobile Sidebar Backdrop */}
+        {/* Mobile backdrop */}
         <div
           className={`fixed inset-0 bg-black bg-opacity-50 z-20 lg:hidden ${
             sidebarOpen ? "block" : "hidden"
@@ -45,7 +53,7 @@ function App() {
           onClick={() => setSidebarOpen(false)}
         />
 
-        {/* Main content area */}
+        {/* Main content */}
         <main className="flex-1 overflow-y-auto p-4 md:p-6">
           <AnimatePresence mode="wait">
             <motion.div
@@ -56,12 +64,28 @@ function App() {
               transition={{ duration: 0.3 }}
               className="h-full"
             >
-              <Outlet />
+              <Routes location={location} key={location.pathname}>
+                {router.map((route, index) => (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    element={<route.component />}
+                  />
+                ))}
+              </Routes>
             </motion.div>
           </AnimatePresence>
         </main>
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppLayout />
+    </Router>
   );
 }
 
