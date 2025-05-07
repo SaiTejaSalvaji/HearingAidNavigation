@@ -6,7 +6,6 @@ import Communication from "./Communication";
 
 const router = [
   { path: "/", component: Dashboard }, // Acts as root layout
-  { path: "/dashboard", component: Dashboard },
   { path: "/settings", component: Settings },
   { path: "/profile", component: Profile },
   { path: "/communication", component: Communication },

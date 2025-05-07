@@ -15,14 +15,8 @@ import router from "./pages"; // your array of routes
 // Internal wrapper to access location/navigation inside Router
 function AppLayout() {
   const location = useLocation();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(true);
-
-  useEffect(() => {
-    if (location.pathname === "/") {
-      navigate("/dashboard");
-    }
-  }, [location, navigate]);
 
   return (
     <div className="h-screen flex flex-col bg-gray-50">
