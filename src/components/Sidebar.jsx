@@ -19,8 +19,10 @@ export default function Sidebar() {
         <ul className="space-y-2">
           {[
             { to: "/dashboard", text: "Dashboard", icon: "📊" },
+            { to: "/communication", text: "Communication", icon: "💬" },
             { to: "/profile", text: "Profile", icon: "👤" },
             { to: "/settings", text: "Settings", icon: "⚙️" },
+            
           ].map((item) => (
             <motion.li
               key={item.to}
@@ -45,7 +47,7 @@ export default function Sidebar() {
         </ul>
       </nav>
 
-      {/* Bottom Area (optional) */}
+      {/* Bottom Area */}
       <div className="mt-auto pt-4 border-t border-gray-700">
         <div className="text-gray-400 text-sm">
           v1.0.0
