@@ -1,0 +1,107 @@
+/* Base Styles */
+.user-profile {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+h2 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Profile Card */
+.profile-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: #3498db;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.profile-info {
+  flex-grow: 1;
+}
+
+.profile-info p, .profile-info li {
+  margin: 8px 0;
+  color: #34495e;
+}
+
+.profile-info h3 {
+  margin-top: 16px;
+  color: #2c3e50;
+  font-size: 18px;
+}
+
+/* Edit Form */
+.edit-form {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edit-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #34495e;
+}
+
+.edit-form input, .edit-form select {
+  padding: 8px;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Buttons */
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+/* Accessibility Tweaks */
+.high-contrast .user-profile {
+  background: #000;
+  color: #fff;
+}
+
+.high-contrast .profile-card {
+  background: #111;
+  border: 2px solid yellow;
+}

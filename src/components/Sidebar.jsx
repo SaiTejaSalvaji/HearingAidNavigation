@@ -11,7 +11,7 @@ export default function Sidebar() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
-        <h1 className="text-2xl font-bold">Hearing Aid Nav</h1>
+        <h1 className="text-2xl font-bold">NavAid</h1>
       </motion.div>
 
       {/* Navigation Links */}
@@ -50,7 +50,7 @@ export default function Sidebar() {
       {/* Bottom Area */}
       <div className="mt-auto pt-4 border-t border-gray-700">
         <div className="text-gray-400 text-sm">
-          v1.0.0
+          <p>© 2025 NavAid. All rights reserved.</p>
         </div>
       </div>
     </div>

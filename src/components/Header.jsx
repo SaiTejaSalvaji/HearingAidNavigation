@@ -24,7 +24,7 @@ export default function Header({ onMenuToggle }) {
               className="text-xl font-bold text-blue-600"
               whileHover={{ scale: 1.02 }}
             >
-              Hearing Aid Navigation System
+              NavAid
             </motion.div>
           </div>
 

@@ -1,0 +1,86 @@
+/* Global Styles for Settings */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+h2, h3 {
+  color: #1a73e8;
+}
+
+.settings-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.settings-section {
+  margin-bottom: 20px;
+}
+
+.settings-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  accent-color: #1a73e8;
+}
+
+button.save-button {
+  background: #1a73e8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button.save-button:hover {
+  background: #135cb3;
+}
+
+@media (max-width: 768px) {
+  .settings-container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  button.save-button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
